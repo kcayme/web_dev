@@ -6,7 +6,8 @@ The following information must be inputted by the user:
     ID Number (If he or she is from USC (student, faculty, or staff))
     Complete Name (First Name, Middle Name and Last Name)
     Complete Address (Barangay, City or Town, and Province are required)
-    Contact Number and Email
+    Contact Number 
+    Email
 
 Upon entering the office, the first time users will register from the app using the information above. 
 Once saved, automatically, the app will also note the day and time he or she entered the office. 
