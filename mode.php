@@ -191,9 +191,8 @@ span.psw {
     <div class="container">
       <label for="fnumber"><b>Enter Faculty ID Number: </b></label>
       <input type="text" placeholder="Enter ID Number" name="id" required>
-      <button type="submit" onclick="myFunction()" name="f_submit">Verify</button>
+      <button type="submit" onclick="myFunction()" name="f_submit">Log In</button>
     </div>
-    <button type="submit" onclick="myFunction()" name="g_submit">Login</button>
   </form>
 </div>
 
