@@ -40,9 +40,8 @@
     <?php  if (isset($_SESSION['name'])) : ?>
     	<center><p class="welcome">Welcome 
 			<?php 
-				$type = $_SESSION['type'];
-				if(!empty($type)){
-					echo $type."  ";
+				if(!empty($_SESSION['type'])){
+					echo $_SESSION['type']."  ";
 					unset($_SESSION['type']);
 				}
 				echo "<strong>".$_SESSION['name']; 

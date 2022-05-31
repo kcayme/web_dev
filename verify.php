@@ -12,14 +12,18 @@
             if ($match['id_number'] === $IDnum) {
                 echo "VALID ID";
                 $name = $match['name'];
-                $address = $match['address'];
+                $province = $match['province'];
+                $citytown = $match['citytown'];
+                $barangay = $match['barangay'];
                 $contact = $match['number'];
                 $email = $match['email'];
                 $prev_timein = $match['time_in'];
                 echo "<p>
                 <b>Student ID: </b>$IDnum<br>
                 <b>Name: </b>$name<br>
-                <b>Address: </b>$address<br>
+                <b>Province: </b>$province<br>
+                <b>City or Town: </b>$province<br>
+                <b>Barangay: </b>$barangay<br>
                 <b>Contact: </b>$contact<br>
                 <b>Email: </b>$email<br>
                 <b>Previous Time In: </b>$prev_timein<br>
@@ -41,14 +45,18 @@
             if ($match['id_number'] === $IDnum) {
                 echo "VALID ID";
                 $name = $match['name'];
-                $address = $match['address'];
+                $province = $match['province'];
+                $citytown = $match['citytown'];
+                $barangay = $match['barangay'];
                 $contact = $match['number'];
                 $email = $match['email'];
                 $prev_timein = $match['time_in'];
                 echo "<p>
                 <b>Faculty/Staff ID: </b>$IDnum<br>
                 <b>Name: </b>$name<br>
-                <b>Address: </b>$address<br>
+                <b>Province: </b>$province<br>
+                <b>City or Town: </b>$province<br>
+                <b>Barangay: </b>$barangay<br>
                 <b>Contact: </b>$contact<br>
                 <b>Email: </b>$email<br>
                 <b>Previous Time In: </b>$prev_timein<br>
