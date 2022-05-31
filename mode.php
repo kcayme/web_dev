@@ -152,7 +152,7 @@ span.psw {
   </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New User?<a href="registration.php">Register Account</a></span>
+      <span class="psw">New User?<a href="student_registration.php">Register Account</a></span>
     </div>
   </form>
 </div>
@@ -174,7 +174,7 @@ span.psw {
     </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New User?<a href="registration.php">Register Account</a></span>
+      <span class="psw">New User?<a href="faculty_registration.php">Register Account</a></span>
     </div>
   </form>
 </div>

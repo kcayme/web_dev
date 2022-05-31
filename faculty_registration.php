@@ -46,7 +46,7 @@
   	</div>
 	  
   	<div class="input-group">
-  	  <button type="submit" class="btn" name="new_reg">Register</button>
+  	  <button type="submit" class="btn" name="fac_reg">Register</button>
   	</div>
   	<p>
   		Already a member? <a href="mode.php">Sign in</a>

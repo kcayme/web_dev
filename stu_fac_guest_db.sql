@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2022 at 06:15 PM
+-- Generation Time: May 31, 2022 at 06:38 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `contactdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faculty`
+--
+
+CREATE TABLE `faculty` (
+  `id_number` varchar(15) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `province` varchar(50) NOT NULL,
+  `citytown` varchar(50) NOT NULL,
+  `barangay` varchar(50) NOT NULL,
+  `number` int(11) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `time_in` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -44,15 +61,17 @@ CREATE TABLE `guest` (
 INSERT INTO `guest` (`name`, `province`, `citytown`, `barangay`, `number`, `email`, `time_in`) VALUES
 ('wakin', 'cebu', 'lacion', 'jugan', 696969420, 'wakin@gmail.com', '2022-05-31 23:57:20'),
 ('wakin', 'cebu', 'lacion', 'jugan', 213123, 'wakin@gmail.com', '2022-06-01 00:02:28'),
-('wakin', 'cebu', 'lacion', 'jugan', 213123, 'wakin@gmail.com', '2022-06-01 00:13:57');
+('wakin', 'cebu', 'lacion', 'jugan', 213123, 'wakin@gmail.com', '2022-06-01 00:13:57'),
+('wakin', 'cebu', 'lacion', 'jugan', 213123, 'wakin@gmail.com', '2022-06-01 00:18:42'),
+('wakin', 'cebu', 'lacion', 'jugan', 213123, 'wakin@gmail.com', '2022-06-01 00:19:20');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `info`
+-- Table structure for table `students`
 --
 
-CREATE TABLE `info` (
+CREATE TABLE `students` (
   `id_number` varchar(15) NOT NULL,
   `name` varchar(30) NOT NULL,
   `province` varchar(50) NOT NULL,
@@ -64,15 +83,30 @@ CREATE TABLE `info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `info`
+-- Dumping data for table `students`
 --
 
-INSERT INTO `info` (`id_number`, `name`, `province`, `citytown`, `barangay`, `number`, `email`, `time_in`) VALUES
-('134231', 'karl', 'cebu', 'liloan', 'tayud', 9232455, 'kcayme@gmail.com', '2022-05-31 23:34:05');
+INSERT INTO `students` (`id_number`, `name`, `province`, `citytown`, `barangay`, `number`, `email`, `time_in`) VALUES
+('134231', 'karl', 'cebu', 'liloan', 'tayud', 9232455, 'kcayme@gmail.com', '2022-05-31 23:34:05'),
+('54878', 'karl', 'cebu', 'liloan', 'tayud', 9232455, 'kcayme@gmail.com', '2022-06-01 00:25:52');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `faculty`
+--
+ALTER TABLE `faculty`
+  ADD PRIMARY KEY (`id_number`),
+  ADD UNIQUE KEY `id_number` (`id_number`) USING BTREE,
+  ADD KEY `number` (`number`) USING BTREE,
+  ADD KEY `email` (`email`) USING BTREE,
+  ADD KEY `name` (`name`),
+  ADD KEY `address` (`province`),
+  ADD KEY `time_in` (`time_in`),
+  ADD KEY `citytown` (`citytown`),
+  ADD KEY `barangay` (`barangay`);
 
 --
 -- Indexes for table `guest`
@@ -87,9 +121,9 @@ ALTER TABLE `guest`
   ADD KEY `barangay` (`barangay`);
 
 --
--- Indexes for table `info`
+-- Indexes for table `students`
 --
-ALTER TABLE `info`
+ALTER TABLE `students`
   ADD PRIMARY KEY (`id_number`),
   ADD UNIQUE KEY `id_number` (`id_number`) USING BTREE,
   ADD KEY `number` (`number`) USING BTREE,
