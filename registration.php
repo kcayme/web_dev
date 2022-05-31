@@ -21,8 +21,18 @@
   	</div>
 
   	<div class="input-group">
-  	  <label>Address</label>
-  	  <input type="text"  name="address" value="">
+  	  <label>Province</label>
+  	  <input type="text"  name="province" value="">
+  	</div>
+
+	<div class="input-group">
+	<label>City or Town</label>
+	<input type="text"  name="citytown" value="">
+  	</div>
+
+	<div class="input-group">
+	<label>Barangay</label>
+	<input type="text"  name="barangay" value="">
   	</div>
 
   	<div class="input-group">

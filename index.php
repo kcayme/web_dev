@@ -38,9 +38,15 @@
 
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['name'])) : ?>
-    	<center><p class="welcome">Welcome <strong>
-			<?php echo $_SESSION['name'];
-					echo"!";?>
+    	<center><p class="welcome">Welcome 
+			<?php 
+				$type = $_SESSION['type'];
+				if(!empty($type)){
+					echo $type."  ";
+					unset($_SESSION['type']);
+				}
+				echo "<strong>".$_SESSION['name']; 
+			?>
 		</strong></p>
 		
     	<button type="submit" class="signoutbtn" name="new_reg"><a href="index.php?logout='1'">Sign Out</a></button></center>
