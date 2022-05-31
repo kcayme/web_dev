@@ -4,7 +4,7 @@
     if (isset($_POST['s_submit'])) {
         $IDnum = $_POST["id"];
         // check if input id number is registered in database
-        $idnum_check_query = "SELECT * FROM info WHERE id_number='$IDnum' LIMIT 1";
+        $idnum_check_query = "SELECT * FROM students WHERE id_number='$IDnum' LIMIT 1";
         $result = mysqli_query($db, $idnum_check_query);
         $match = mysqli_fetch_assoc($result);
 
