@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php //include('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,33 +10,38 @@
   	<h2>Register</h2>
   </div>
 	
-  <form method="post" action="register.php">
+  <form method="post" action="server.php">
   	<?php include('errors.php'); ?>
 	<div class="input-group">
-  	  <label>Id Number</label>
-  	  <input type="text" name="id" value="<?php echo $id; ?>">
+  	  <label>ID Number</label>
+  	  <input type="text" name="id" value="">
   	</div>
+
   	<div class="input-group">
-  	  <label>Username</label>
-  	  <input type="text" name="username" value="<?php echo $username; ?>">
+  	  <label>Name</label>
+  	  <input type="text" name="name" value="">
   	</div>
+
+  	<div class="input-group">
+  	  <label>Address</label>
+  	  <input type="text"  name="address" value="">
+  	</div>
+
+  	<div class="input-group">
+  	  <label>Contact Number</label>
+  	  <input type="text" name="contact">
+  	</div>
+
   	<div class="input-group">
   	  <label>Email</label>
-  	  <input type="email" name="email" value="<?php echo $email; ?>">
+  	  <input type="email" name="email" name="password_2">
   	</div>
+	  
   	<div class="input-group">
-  	  <label>Password</label>
-  	  <input type="password" name="password_1">
-  	</div>
-  	<div class="input-group">
-  	  <label>Confirm password</label>
-  	  <input type="password" name="password_2">
-  	</div>
-  	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	  <button type="submit" class="btn" name="new_reg">Register</button>
   	</div>
   	<p>
-  		Already a member? <a href="login.php">Sign in</a>
+  		Already a member? <a href="signin.php">Sign in</a>
   	</p>
   </form>
 </body>
