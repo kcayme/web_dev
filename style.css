@@ -65,7 +65,8 @@ form, .content {
 }
 a {
   text-decoration: none;
-  color: white;
+  color: blue;
+  text-decoration:underline;
 }
 
 .error {
