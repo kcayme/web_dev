@@ -1,6 +1,3 @@
-
-//https://www.youtube.com/watch?v=sz2EM-gkEs0&list=PLpPVLI0A0OkLBWbcctmGxxF6VHWSQw1hi&index=2
-//moving my source code
 <?php 
   session_start(); 
 
@@ -40,7 +37,9 @@
 
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<p>Welcome <strong>
+			<?php echo $_SESSION['username']; ?>
+		</strong></p>
     	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
     <?php endif ?>
 </div>

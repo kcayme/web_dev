@@ -136,7 +136,8 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/login.php" method="post">
+  <! -- Student Login Form -->
+  <form class="modal-content animate" method="post" action="verify.ph">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="a.jpg" alt="Avatar" class="avatar">
@@ -144,10 +145,10 @@ span.psw {
 
     <div class="container">
     <label for="snumber"><b>Enter Student Number: </b></label>
-    <input type="text" placeholder="Enter Student ID Number" name="id" required>
-
-    <button type="Login" onclick="myFunction()">Login</button>
-   
+    <input type="text" placeholder="Enter Student ID Number" name="id" required><br>
+    
+    <button type="submit" onclick="myFunction()" name="s_submit">Verify</button>
+    <?php include('verify.php') ?>
   </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -195,8 +196,6 @@ span.psw {
 
 
 <script>
-
-
 // Get the modal
 var modal = document.getElementById('id01');
 
@@ -206,7 +205,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
 </script>
 
 </body>
