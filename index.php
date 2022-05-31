@@ -1,14 +1,14 @@
 <?php 
   session_start(); 
 
-	/*
-  if (!isset($_SESSION['username'])) {
+  if (!isset($_SESSION['name'])) {
   	$_SESSION['msg'] = "You must log in first";
   	header('location: mode.php');
-  }*/
+  }
+  
   if (isset($_GET['logout'])) {
   	session_destroy();
-  	unset($_SESSION['username']);
+  	unset($_SESSION['name']);
   	header("location: mode.php");
   }
 ?>
@@ -37,11 +37,13 @@
   	<?php endif ?>
 
     <!-- logged in user information -->
-    <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong>
-			<?php echo $_SESSION['username']; ?>
+    <?php  if (isset($_SESSION['name'])) : ?>
+    	<center><p class="welcome">Welcome <strong>
+			<?php echo $_SESSION['name'];
+					echo"!";?>
 		</strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+		
+    	<button type="submit" class="signoutbtn" name="new_reg"><a href="index.php?logout='1'">Sign Out</a></button></center>
     <?php endif ?>
 </div>
 		

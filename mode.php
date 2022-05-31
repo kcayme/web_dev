@@ -140,7 +140,7 @@ span.psw {
   <form class="modal-content animate" method="post" action="verify.php">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="a.jpg" alt="Avatar" class="avatar">
+      <img src="Student.png" alt="Student" class="avatar" style="width:90px; height:90px;">
     </div>
 
     <div class="container">
@@ -162,7 +162,7 @@ span.psw {
   <form class="modal-content animate" action="verify.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="c.jpg" alt="Avatar" class="avatar">
+      <img src="Faculty.png" alt="Faculty" class="avatar" style="width:90px; height:90px;">
     </div>
 	
     <div class="container">
@@ -185,7 +185,7 @@ span.psw {
   <form class="modal-content animate" action="login.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="f.jpg" alt="Avatar" class="avatar">
+      <img src="Guest.png" alt="Guest" class="avatar" style="width:90px; height:90px;">
     </div>
 
     <div class="container">
