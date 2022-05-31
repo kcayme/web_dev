@@ -80,7 +80,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -125,6 +125,16 @@ span.psw {
      width: 100%;
   }
 }
+
+input[type='email']{
+  height: 10px;  
+  width: 96.25%;
+  padding: 16px;
+  border-width: thin;
+  border-color: #CCCCCC;
+  border-style: solid;
+} 
+
 </style>
 </head>
 <body>
@@ -192,7 +202,7 @@ span.psw {
     </div>
 
     <div class="container">
-      <label for="gname"><b> Name: </b></label>
+      <label for="gname"><b>Name: </b></label>
       <input type="text" placeholder="Guest Name" name="gname" required>
 
       <label for="gprovince"><b>Province: </b></label>
@@ -207,8 +217,8 @@ span.psw {
       <label for="gcontact"><b>Contact Number: </b></label>
       <input type="text" placeholder="Contact Number" name="gcontact" required>
 
-      <label for="gemail"><b>Email: </b></label>
-      <input type="email" placeholder="Email" name="gemail" required>
+      <label for="gemail"><b>Email Address: </b></label>
+      <input type="email" placeholder="Email Address" name="gemail" required>
 
       <button type="submit" onclick="myFunction()" name="guest_in">Log In</button>
     </div>
