@@ -4,7 +4,9 @@ session_start();
 // initializing variables
 $IDnum = "";
 $name  = "";
-$address = "";
+$province = "";
+$citytown = "";
+$barangay = "";
 $contact = "";
 $email = "";
 $timein = "";
@@ -18,7 +20,9 @@ if (isset($_POST['new_reg'])) {
   // receive all input values from the form
   $IDnum = mysqli_real_escape_string($db, $_POST['id']);
   $name = mysqli_real_escape_string($db, $_POST['name']);
-  $address = mysqli_real_escape_string($db, $_POST['address']);
+  $province = mysqli_real_escape_string($db, $_POST['province']);
+  $citytown = mysqli_real_escape_string($db, $_POST['citytown']);
+  $barangay = mysqli_real_escape_string($db, $_POST['barangay']);
   $contact = mysqli_real_escape_string($db, $_POST['contact']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
 
@@ -26,7 +30,9 @@ if (isset($_POST['new_reg'])) {
   // by adding (array_push()) corresponding error unto $errors array
   if (empty($IDnum)) { array_push($errors, "Username is required"); }
   if (empty($name)) { array_push($errors, "Email is required"); }
-  if (empty($address)) { array_push($errors, "Address is required"); }
+  if (empty($province)) { array_push($province, "Province is required"); }
+  if (empty($citytown)) { array_push($citytown, "City/Town is required"); }
+  if (empty($barangay)) { array_push($barangay, "Barangay is required"); }
   if (empty($contact)) { array_push($errors, "Contact is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
 
@@ -44,13 +50,12 @@ if (isset($_POST['new_reg'])) {
 
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
-  	//$password = md5($password_1);//encrypt the password before saving in the database
     // get time in on this registration (format: YYYY-MM-DD HH:MM:SS)
     date_default_timezone_set('Asia/Manila');
     $timein = date('Y-m-d H:i:s');
     // a
-  	$query = "INSERT INTO info (id_number, name, address, number, email, time_in) 
-  			  VALUES('$IDnum', '$name', '$address', '$contact', '$email', '$timein')";
+  	$query = "INSERT INTO info (id_number, name, province, citytown, barangay, number, email, time_in) 
+  			  VALUES('$IDnum', '$name', '$province','$citytown','$barangay', '$contact', '$email', '$timein')";
   	if(mysqli_query($db, $query)){
       $_SESSION['name'] = $name;
   	  $_SESSION['success'] = "You are now logged in";
@@ -85,4 +90,41 @@ if (isset($_POST['login_user'])) {
   */
 }
 
+if (isset($_POST['guest_in'])) {
+  // receive all input values from the form
+  $name = mysqli_real_escape_string($db, $_POST['gname']);
+  $province = mysqli_real_escape_string($db, $_POST['gprovince']);
+  $citytown = mysqli_real_escape_string($db, $_POST['gcitytown']);
+  $barangay = mysqli_real_escape_string($db, $_POST['gbarangay']);
+  $contact = mysqli_real_escape_string($db, $_POST['gcontact']);
+  $email = mysqli_real_escape_string($db, $_POST['gemail']);
+
+  // form validation: ensure that the form is correctly filled ...
+  // by adding (array_push()) corresponding error unto $errors array
+  if (empty($name)) { array_push($errors, "Email is required"); }
+  if (empty($province)) { array_push($province, "Province is required"); }
+  if (empty($citytown)) { array_push($citytown, "City/Town is required"); }
+  if (empty($barangay)) { array_push($barangay, "Barangay is required"); }
+  if (empty($contact)) { array_push($errors, "Contact is required"); }
+  if (empty($email)) { array_push($errors, "Email is required"); }
+
+  // Finally, register user if there are no errors in the form
+  if (count($errors) == 0) {
+    // get time in on this registration (format: YYYY-MM-DD HH:MM:SS)
+    date_default_timezone_set('Asia/Manila');
+    $timein = date('Y-m-d H:i:s');
+    // a
+  	$query = "INSERT INTO guest (name, province, citytown, barangay, number, email, time_in) 
+  			  VALUES('$name', '$province','$citytown','$barangay', '$contact', '$email', '$timein')";
+  	if(mysqli_query($db, $query)){
+      $_SESSION['type'] = "Guest";
+      $_SESSION['name'] = $name;
+  	  $_SESSION['success'] = "You are now logged in";
+  	  header('location: index.php');
+    }
+  	else{
+      array_push($errors, "Guest Login Failed!");
+    }
+  }
+}
 ?>
