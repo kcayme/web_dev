@@ -6,7 +6,7 @@
 </head>
 <body>
   <div class="header">
-  	<h2>Register</h2>
+  	<h2>Faculty Registration</h2>
   </div>
 	
   <form method="post" action="server.php">
@@ -49,7 +49,7 @@
   	  <button type="submit" class="btn" name="fac_reg">Register</button>
   	</div>
   	<p>
-  		Already a member? <a href="mode.php">Sign in</a>
+  		Already a member? <a class="signin" href="mode.php">Sign in</a>
   	</p>
   </form>
 </body>
