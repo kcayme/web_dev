@@ -11,7 +11,6 @@
   </div>
 	
   <form method="post" action="server.php">
-  	<!--php include('errors.php'); > -->
 	<div class="input-group">
   	  <label>ID Number</label>
   	  <input type="text" name="id" value="">
