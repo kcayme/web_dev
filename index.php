@@ -38,8 +38,15 @@
 
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['name'])) : ?>
-    	<p>Welcome <strong>
-			<?php echo $_SESSION['name']; ?>
+    	<p>Welcome 
+			<?php 
+				$type = $_SESSION['type'];
+				if(!empty($type)){
+					echo $type."  ";
+					unset($_SESSION['type']);
+				}
+				echo "<strong>".$_SESSION['name']; 
+			?>
 		</strong></p>
     	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
     <?php endif ?>

@@ -182,16 +182,32 @@ span.psw {
 
 <div id="id03" class="modal">
   
-  <form class="modal-content animate" action="login.php" method="post">
+  <form class="modal-content animate" action="server.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="f.jpg" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
-      <label for="fnumber"><b>Enter Faculty ID Number: </b></label>
-      <input type="text" placeholder="Enter ID Number" name="id" required>
-      <button type="submit" onclick="myFunction()" name="f_submit">Log In</button>
+      <label for="gname"><b> Name: </b></label>
+      <input type="text" placeholder="Guest Name" name="gname" required>
+
+      <label for="gprovince"><b>Province: </b></label>
+      <input type="text" placeholder="Province" name="gprovince" required>
+
+      <label for="gcitytown"><b>City or Town: </b></label>
+      <input type="text" placeholder="City or Town" name="gcitytown" required>
+
+      <label for="gbarangay"><b>Barangay: </b></label>
+      <input type="text" placeholder="Barangay" name="gbarangay" required>
+
+      <label for="gcontact"><b>Contact Number: </b></label>
+      <input type="text" placeholder="Contact Number" name="gcontact" required>
+
+      <label for="gemail"><b>Email: </b></label>
+      <input type="email" placeholder="Email" name="gemail" required>
+
+      <button type="submit" onclick="myFunction()" name="guest_in">Log In</button>
     </div>
   </form>
 </div>
