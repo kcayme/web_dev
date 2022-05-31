@@ -137,7 +137,7 @@ span.psw {
 <div id="id01" class="modal">
   
   <! -- Student Login Form -->
-  <form class="modal-content animate" method="post" action="verify.ph">
+  <form class="modal-content animate" method="post" action="verify.php">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="a.jpg" alt="Avatar" class="avatar">
@@ -148,11 +148,12 @@ span.psw {
     <input type="text" placeholder="Enter Student ID Number" name="id" required><br>
     
     <button type="submit" onclick="myFunction()" name="s_submit">Verify</button>
-    <?php include('verify.php') ?>
+    <?php //include('verify.php') ?>
+
   </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New User?<a href="index.php">Register Account</a></span>
+      <span class="psw">New User?<a href="registration.php">Register Account</a></span>
     </div>
   </form>
 </div>
