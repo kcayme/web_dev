@@ -17,6 +17,7 @@
                 $email = $match['email'];
                 $prev_timein = $match['time_in'];
                 echo "<p>
+                <b>Student ID: </b>$IDnum<br>
                 <b>Name: </b>$name<br>
                 <b>Address: </b>$address<br>
                 <b>Contact: </b>$contact<br>
@@ -29,7 +30,7 @@
             echo "<p>ID Number not registered!</p>";
         }
     }
-    if (isset($_POST['s_submit'])) {
+    if (isset($_POST['f_submit'])) {
         $IDnum = $_POST["id"];
         // check if input id number is registered in database
         $idnum_check_query = "SELECT * FROM info WHERE id_number='$IDnum' LIMIT 1";
@@ -45,6 +46,7 @@
                 $email = $match['email'];
                 $prev_timein = $match['time_in'];
                 echo "<p>
+                <b>Faculty/Staff ID: </b>$IDnum<br>
                 <b>Name: </b>$name<br>
                 <b>Address: </b>$address<br>
                 <b>Contact: </b>$contact<br>

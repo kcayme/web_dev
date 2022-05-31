@@ -1,4 +1,3 @@
-<?php //include('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,14 +32,14 @@
 
   	<div class="input-group">
   	  <label>Email</label>
-  	  <input type="email" name="email" name="password_2">
+  	  <input type="email" name="email">
   	</div>
 	  
   	<div class="input-group">
   	  <button type="submit" class="btn" name="new_reg">Register</button>
   	</div>
   	<p>
-  		Already a member? <a href="signin.php">Sign in</a>
+  		Already a member? <a href="mode.php">Sign in</a>
   	</p>
   </form>
 </body>

@@ -46,6 +46,7 @@ if (isset($_POST['new_reg'])) {
   if (count($errors) == 0) {
   	//$password = md5($password_1);//encrypt the password before saving in the database
     // get time in on this registration (format: YYYY-MM-DD HH:MM:SS)
+    date_default_timezone_set('Asia/Manila');
     $timein = date('Y-m-d H:i:s');
     // a
   	$query = "INSERT INTO info (id_number, name, address, number, email, time_in) 
