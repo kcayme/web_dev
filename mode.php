@@ -148,7 +148,6 @@ span.psw {
     <input type="text" placeholder="Enter Student ID Number" name="id" required><br>
     
     <button type="submit" onclick="myFunction()" name="s_submit">Verify</button>
-    <?php //include('verify.php') ?>
 
   </div>
     <div class="container" style="background-color:#f1f1f1">
@@ -160,23 +159,22 @@ span.psw {
 
 <div id="id02" class="modal">
   
-  <form class="modal-content animate" action="login.php" method="post">
+  <form class="modal-content animate" action="verify.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="c.jpg" alt="Avatar" class="avatar">
     </div>
 	
-
     <div class="container">
-    <label for="fnumber"><b>Enter ID Number: </b></label>
+    <label for="fnumber"><b>Enter Faculty ID Number: </b></label>
     <input type="text" placeholder="Enter ID Number" name="id" required>
 
-    <button type="Login">Login</button>
+    <button type="submit" onclick="myFunction()" name="f_submit">Verify</button>
    
-  </div>
+    </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New User?<a href="index.php">Register Account</a></span>
+      <span class="psw">New User?<a href="registration.php">Register Account</a></span>
     </div>
   </form>
 </div>
@@ -188,10 +186,14 @@ span.psw {
     <div class="imgcontainer">
       <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="f.jpg" alt="Avatar" class="avatar">
-	  <button class="psw">Guest<a href="index.php">Sign In</a></button>
-    
-   
-  </div>
+    </div>
+
+    <div class="container">
+      <label for="fnumber"><b>Enter Faculty ID Number: </b></label>
+      <input type="text" placeholder="Enter ID Number" name="id" required>
+      <button type="submit" onclick="myFunction()" name="f_submit">Verify</button>
+    </div>
+    <button type="submit" onclick="myFunction()" name="g_submit">Login</button>
   </form>
 </div>
 
