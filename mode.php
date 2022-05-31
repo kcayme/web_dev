@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -128,7 +129,9 @@ span.psw {
 </head>
 <body>
 
-<center><h2>Contact Tracing Application</h2>
+
+
+<center><h2><br><br>Contact Tracing Application</h2>
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Student Entry</button>
 <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Faculty Entry</button>
@@ -152,7 +155,7 @@ span.psw {
   </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New User?<a href="student_registration.php">Register Account</a></span>
+      <span class="psw">New User?<a href="student_registration.php">&nbsp;Register Account</a></span>
     </div>
   </form>
 </div>
