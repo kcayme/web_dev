@@ -64,8 +64,8 @@ form, .content {
   padding: 20px;
 }
 a {
-  text-decoration: none;
-  color: white;
+  text-decoration: underline;
+  color: blue;
 }
 
 .error {

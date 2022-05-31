@@ -4,7 +4,13 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(Contact_Tracing_Animated.gif);
+  background-size: cover;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
