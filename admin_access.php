@@ -22,7 +22,7 @@
             <div class="col-md-12">
                 <div class="card mt-4">
                     <div class="card-header">
-                        <h4>Student Information</h4>
+                        <h4>Administrator Page</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -30,7 +30,7 @@
 
                                 <form action="" method="GET">
                                     <div class="input-group mb-3">
-                                        <input type="text" name="search" required value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>" class="form-control" placeholder="Search data">
+                                        <input type="text" name="search" placeholder="City, barangay, province, ID number, first name, last name, time and day..." value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>" class="form-control" placeholder="Search data">
                                         <button type="submit" class="btn btn-primary">Search</button>
                                     </div>
                                 </form>
@@ -47,6 +47,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>Account Type</th>
                                     <th>ID Number</th>
                                     <th>Name</th>
                                     <th>Province</th>
@@ -66,13 +67,14 @@
                                         $filtervalues = $_GET['search'];
                                         $query = "SELECT * FROM students WHERE CONCAT(id_number,name,province,citytown,barangay,number,email,time_in) LIKE '%$filtervalues%' ";
                                         $query_run = mysqli_query($con, $query);
-
-                                        if(mysqli_num_rows($query_run) > 0)
+                                        $student_match = mysqli_num_rows($query_run);
+                                        if($student_match > 0)
                                         {
                                             foreach($query_run as $items)
                                             {
                                                 ?>
                                                 <tr>
+                                                    <td><?= "Student"; ?></td>
                                                     <td><?= $items['id_number']; ?></td>
                                                     <td><?= $items['name']; ?></td>
                                                     <td><?= $items['province']; ?></td>
@@ -85,8 +87,29 @@
                                                 <?php
                                             }
                                         }
-                                        else
+                                        $query = "SELECT * FROM faculty WHERE CONCAT(id_number,name,province,citytown,barangay,number,email,time_in) LIKE '%$filtervalues%' ";
+                                        $query_run = mysqli_query($con, $query);
+                                        $faculty_match = mysqli_num_rows($query_run);
+                                        if($faculty_match > 0)
                                         {
+                                            foreach($query_run as $items)
+                                            {
+                                                ?>
+                                                <tr>
+                                                    <td><?= "Faculty/Staff"; ?></td>
+                                                    <td><?= $items['id_number']; ?></td>
+                                                    <td><?= $items['name']; ?></td>
+                                                    <td><?= $items['province']; ?></td>
+                                                    <td><?= $items['citytown']; ?></td>
+                                                    <td><?= $items['barangay']; ?></td>
+                                                    <td><?= $items['number']; ?></td>
+                                                    <td><?= $items['email']; ?></td>
+                                                    <td><?= $items['time_in']; ?></td>
+                                                </tr>
+                                                <?php
+                                            }
+                                        }
+                                        else if ($faculty_match == 0 && $student_match == 0){
                                             ?>
                                                 <tr>
                                                     <td colspan="8">No Record Found</td>
@@ -94,16 +117,17 @@
                                             <?php
                                         }
                                     }
-                                    else
-                                    {
+                                    else if (empty($_GET['search'])){
                                         $query = "SELECT * FROM students";
                                         $query_run = mysqli_query($con, $query);
-                                        if(mysqli_num_rows($query_run) > 0)
+                                        $student_match = mysqli_num_rows($query_run);
+                                        if($student_match > 0)
                                         {
                                             foreach($query_run as $items)
                                             {
                                                 ?>
                                                 <tr>
+                                                    <td><?= "Student"; ?></td>
                                                     <td><?= $items['id_number']; ?></td>
                                                     <td><?= $items['name']; ?></td>
                                                     <td><?= $items['province']; ?></td>
@@ -116,7 +140,30 @@
                                                 <?php
                                             }
                                         }
-                                        else
+
+                                        $query = "SELECT * FROM faculty";
+                                        $query_run = mysqli_query($con, $query);
+                                        $faculty_match = mysqli_num_rows($query_run);
+                                        if($faculty_match > 0)
+                                        {
+                                            foreach($query_run as $items)
+                                            {
+                                                ?>
+                                                <tr>
+                                                    <td><?= "Student"; ?></td>
+                                                    <td><?= $items['id_number']; ?></td>
+                                                    <td><?= $items['name']; ?></td>
+                                                    <td><?= $items['province']; ?></td>
+                                                    <td><?= $items['citytown']; ?></td>
+                                                    <td><?= $items['barangay']; ?></td>
+                                                    <td><?= $items['number']; ?></td>
+                                                    <td><?= $items['email']; ?></td>
+                                                    <td><?= $items['time_in']; ?></td>
+                                                </tr>
+                                                <?php
+                                            }
+                                        }
+                                        else if ($faculty_match == 0 && $student_match == 0)
                                         {
                                             ?>
                                                 <tr>
