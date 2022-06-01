@@ -69,6 +69,13 @@
             <center><strong><p class="success">Attempting to Log-in as 
                 <?php 
                     echo $IDnum."</center></strong><br>";
+                    echo "Name: ".$name."<br>";
+                    echo "Province: ".$province."<br>";
+                    echo "City or Town: ".$citytown."<br>";
+                    echo "Barangay: ".$barangay."<br>";
+                    echo "Contact: ".$contact."<br>";
+                    echo "Email Address: ".$email."<br>";
+                    echo "Previous Time-In: ".$prev_timein."<br><br>";
                 ?>
                 <div class="verification">
                     <div class="labels">
@@ -93,6 +100,7 @@
                     </div>
                 </div>
             </p>
+            <br>
             <div class="btn-group">
                 <button type="submit" class="loginbtn" 
                     name=<?php if($_SERVER["type"] == "Student"){

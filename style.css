@@ -13,7 +13,7 @@ button{
   cursor: pointer;
 }
 .header {
-  width: auto;
+  width: 30%;
   margin: 50px auto 0px;
   color: white;
   background: #5F9EA0;
@@ -21,6 +21,11 @@ button{
   border: 1px solid #B0C4DE;
   border-bottom: none;
   padding: 20px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.details{
+  margin-left: 10px;
 }
 form, .content {
   width: 30%;
@@ -28,7 +33,7 @@ form, .content {
   padding: 20px;
   border: 1px solid #B0C4DE;
   background: white;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .login-form {
