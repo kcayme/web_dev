@@ -146,6 +146,48 @@ input[type='email']{
      width: 100%;
   }
 }
+.buttonContainers{
+
+  display:flex;
+
+}
+.zoomb1{
+
+  transition: transform .2s;
+  flex-grow:1;
+
+}
+.zoomb2{
+
+  transition: transform .2s;
+  flex-grow:1;
+
+}
+.zoomb3{
+
+  transition: transform .2s;
+  flex-grow:1;
+
+}
+.zoomb1:hover {
+
+  transform: scale(1.2);
+  cursor: pointer;
+  
+  
+}
+.zoomb2:hover {
+
+  transform: scale(1.2);
+  cursor: pointer; 
+  
+}
+.zoomb3:hover {
+
+  transform: scale(1.2);
+  cursor: pointer;
+
+}
 </style>
 </head>
 <body>
@@ -153,10 +195,17 @@ input[type='email']{
 
 
 <center><h2><br><br>Contact Tracing Application</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Student Entry</button>
-<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Faculty Entry</button>
-<button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Guest Entry</button></center>
+<div class = "buttonContainers">
+  <div class = "zoomb1">
+    <img src="StudentLogin.png" onclick="document.getElementById('id01').style.display='block'" style="width:75%;" />
+  </div>
+  <div class = "zoomb2">
+    <img src="FacultyLogin.png" onclick="document.getElementById('id02').style.display='block'" style="width:75%;" />
+  </div>
+  <div class = "zoomb3">
+    <img src="GuestLogin.png" onclick="document.getElementById('id03').style.display='block'" style="width:75%;" /></center>
+  </div>
+</div>
 
 <div id="id01" class="modal">
   
