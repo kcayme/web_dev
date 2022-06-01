@@ -74,10 +74,11 @@
                     echo "City or Town: ".$citytown."<br>";
                     echo "Barangay: ".$barangay."<br>";
                     echo "Contact: ".$contact."<br>";
-                    echo "Email: ".$email."<br>";
+                    echo "Email Address: ".$email."<br>";
                     echo "Previous Time-In: ".$prev_timein."<br><br>";
                 ?>
             </p>
+            <br>
             <div class="btn-group">
                 <button type="submit" class="loginbtn" 
                     name=<?php if($_SERVER["type"] == "Student"){
