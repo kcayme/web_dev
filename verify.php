@@ -3,14 +3,14 @@
     include('server.php');
     unset($_SERVER["type"]);
     if (isset($_POST['s_submit'])) {
-        $IDnum = $_POST["id"];
+        $IDnum = mysqli_real_escape_string($db, $_POST['id']);
         $_SESSION["id"] = $IDnum;
         $_SERVER["type"] = "Student";
         // check if input id number is registered in database
         $idnum_check_query = "SELECT * FROM students WHERE id_number='$IDnum' LIMIT 1";
     }
     else if (isset($_POST['f_submit'])) {
-        $IDnum = $_POST["id"];
+        $IDnum = mysqli_real_escape_string($db, $_POST['id']);
         $_SESSION["id"] = $IDnum;
         $_SERVER["type"] = "Faculty/Staff";
         // check if input id number is registered in database
