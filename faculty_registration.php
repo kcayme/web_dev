@@ -1,3 +1,17 @@
+<?php 
+	session_start();
+	if(isset($_SESSION['status'])){
+		$status = $_SESSION['status'];
+		$error_msg = "";
+		if($status == "fac_id_exist"){
+			echo "<script>alert('Faculty Registration Failed! ID already exists.')</script>";
+		}
+		else if($status == "fac_reg_failed"){
+			echo "<script>alert('Faculty Registration Failed! Unsuccessful update to database.')</script>";
+		}
+		unset($_SESSION['status']);
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,5 +66,6 @@
   		Already a member? <a class="signin" href="mode.php">Sign in</a>
   	</p>
   </form>
+
 </body>
 </html>

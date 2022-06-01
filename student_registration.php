@@ -1,3 +1,17 @@
+<?php 
+	session_start();
+	if(isset($_SESSION['status'])){
+		$status = $_SESSION['status'];
+		$error_msg = "";
+		if($status == "stu_id_exist"){
+			echo "<script>alert('Student Registration Failed! ID already exists')</script>.";
+		}
+		else if($status == "stu_reg_failed"){
+			echo "<script>alert('Student Registration Failed! Unsuccessful update to database.')</script>";
+		}
+		unset($_SESSION['status']);
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>

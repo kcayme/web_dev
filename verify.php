@@ -2,7 +2,7 @@
     // verifies id number input if it is registered
     include('server.php');
     unset($_SERVER["type"]);
-    if (isset($_POST['s_submit'])) {
+    if (isset($_POST['s_submit'])) {  
         $IDnum = mysqli_real_escape_string($db, $_POST['id']);
         $_SESSION["id"] = $IDnum;
         $_SERVER["type"] = "Student";

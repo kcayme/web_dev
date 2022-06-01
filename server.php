@@ -33,7 +33,8 @@ if (isset($_POST['stu_reg'])) {
   
   if ($match) { // if id number exists or has an id number match
     if ($match['id_number'] === $IDnum) {
-      echo "ID number already exists";
+      $_SESSION['status'] = "stu_id_exist";
+      header('location: student_registration.php');
     }
   }
 
@@ -53,7 +54,8 @@ if (isset($_POST['stu_reg'])) {
   	  header('location: index.php');
     }
   	else{
-      echo "registration failed!";
+      $_SESSION['status'] = "stu_reg_failed";
+      header('location: student_registration.php');
     }
   }
 }
@@ -76,7 +78,8 @@ else if (isset($_POST['fac_reg'])) {
   
   if ($match) { // if id number exists or has an id number match
     if ($match['id_number'] === $IDnum) {
-      echo "ID number already exists";
+      $_SESSION['status'] = "fac_id_exist";
+      header('location: faculty_registration.php');
     }
   }
   // Finally, register user if there are no errors in the form
@@ -95,7 +98,8 @@ else if (isset($_POST['fac_reg'])) {
   	  header('location: index.php');
     }
   	else{
-      echo "registration failed!";
+      $_SESSION['status'] = "fac_reg_failed";
+      header('location: faculty_registration.php');
     }
   }
 }
