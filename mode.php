@@ -16,6 +16,9 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{
@@ -34,8 +37,17 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+
 }
 
+.title{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 85px;
+  line-height: 40px;
+  color: #009096;
+  -webkit-text-fill-color: #009096; /* Will override color (regardless of order) */
+  -webkit-text-stroke: 0.5px white;
+}
 /* Set a style for all buttons */
 button {
   background-color: #04AA6D;
@@ -204,7 +216,7 @@ input[type='email']{
 
 
 
-<center><h2><br><br>Contact Tracing Application</h2>
+<center><h2 class="title"><br><br>Contact Tracing Application</h2><br>
 <div class = "buttonContainers">
   <div class = "zoomb1">
     <img src="StudentLogin.png" onclick="document.getElementById('id01').style.display='block'" style="width:75%;" />
@@ -258,7 +270,7 @@ input[type='email']{
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
       <span class="psw">New User?&nbsp;<a href="faculty_registration.php">Register Account</a><br>
-      Admin?&nbsp;<a href="admin_login.php">Login here</a></span>
+      Admin?&nbsp;&emsp;&ensp;<a href="admin_login.php">Login here</a></span>
     </div>
   </form>
 </div>

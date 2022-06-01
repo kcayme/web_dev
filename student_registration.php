@@ -58,13 +58,14 @@
   	  <label>Email</label>
   	  <input type="email" name="email" required>
   	</div>
-	  
+	<br><center>  
   	<div class="input-group">
   	  <button type="submit" class="btn" name="stu_reg">Register</button>
   	</div>
-  	<p>
+	<br>
+  	<p style="font-size:15px">
   		Already a member? <a class="signin" href="mode.php">Sign in</a>
-  	</p>
+  	</p></center> 
   </form>
 </body>
 </html>
