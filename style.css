@@ -179,6 +179,10 @@ a:hover{
   justify-content: space-between;
 }
 
+.labels{
+  text-align: left;
+}
 .details{
   text-align: right;
+  text-decoration: none;
 }

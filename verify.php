@@ -67,15 +67,17 @@
     <?php  if ($_SESSION["isRegistered"] == true) : ?>
         <form action="server.php" class="login-form" method="post">
             <center><strong><p class="success">Attempting to Log-in as 
+                <?php echo $IDnum."</strong>";?>
                 <div class="verification">
                     <div class="labels">
+                        <strong>
                         Name: <br>
                         Province: <br>
                         City or Town: <br>
                         Barangay: <br>
                         Contact: <br>
                         Email: <br>
-                        Previous Time-In: <br><br>
+                        Previous Time-In: <br><br></strong>
                     </div>
                     <div class="details">
                         <?php
