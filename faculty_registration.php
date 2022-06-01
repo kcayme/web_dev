@@ -66,6 +66,5 @@
   		Already a member? <a class="signin" href="mode.php">Sign in</a>
   	</p>
   </form>
-
 </body>
 </html>
