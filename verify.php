@@ -77,6 +77,28 @@
                     echo "Email Address: ".$email."<br>";
                     echo "Previous Time-In: ".$prev_timein."<br><br>";
                 ?>
+                <div class="verification">
+                    <div class="labels">
+                        Name: <br>
+                        Province: <br>
+                        City or Town: <br>
+                        Barangay: <br>
+                        Contact: <br>
+                        Email: <br>
+                        Previous Time-In: <br><br>
+                    </div>
+                    <div class="details">
+                        <?php
+                            echo $name."<br>";
+                            echo $province."<br>";
+                            echo $citytown."<br>";
+                            echo $barangay."<br>";
+                            echo $contact."<br>";
+                            echo $email."<br>";
+                            echo $prev_timein."<br><br>";
+                        ?>
+                    </div>
+                </div>
             </p>
             <br>
             <div class="btn-group">
