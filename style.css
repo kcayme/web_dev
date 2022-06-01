@@ -109,6 +109,9 @@ a:hover{
   text-decoration: none;
 }
 
+.cancelbtn{
+  width: 30%;
+}
 .admincancel{
 
   padding: 10px;
@@ -163,4 +166,14 @@ a:hover{
 .reg-form{
   display: flex;
   flex-direction: row;
+}
+
+.verification{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.details{
+  text-align: right;
 }
