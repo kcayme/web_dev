@@ -84,3 +84,17 @@ a {
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
+.cancelbtn {
+  padding: 10px;
+  font-size: 50px;
+  color: white;
+  background: #a94442;
+  border: none;
+  border-radius: 5px;
+}
+
+.loginbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #04AA6D;
+}
