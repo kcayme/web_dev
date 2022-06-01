@@ -1,12 +1,18 @@
-<?php
-    session_start();
-    if(!isset($_SESSION["admin_access"])){
-        session_destroy();
-  	    header("location: mode.php");
-    }
-    else{
-        unset($_SESSION['admin_access']);
-    }
+<?php 
+  session_start(); 
+
+  if (isset($_GET['logout'])) {
+      session_destroy();
+      unset($_SESSION['name']);
+      header("location: mode.php");
+  }
+  if(!isset($_SESSION["admin_access"])){
+      session_destroy();
+      header("location: mode.php");
+  }
+  else{
+      unset($_SESSION['admin_access']);
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +28,21 @@
         background: url(Contact_Tracing_Animated.gif);
         background-size: cover;
     }
-    </style>    
+    button{
+        cursor: pointer;
+    }
+    .signoutbtn {
+        padding: 10px;
+        font-size: 15px;
+        color: white;
+        background: #f44336;
+        border: none;
+        border-radius: 5px;
+        width: auto;
+        text-decoration: none;
+    }
+    </style>
+        
 
 </head>
 <body>
@@ -192,6 +212,8 @@
         </div>
     </div>
     </center></table>
+    <br>
+    <center><button type="submit" class="signoutbtn"><a class="signoutbtn" href="index.php?logout='1'">Sign Out</a></button></center>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
