@@ -67,16 +67,6 @@
     <?php  if ($_SESSION["isRegistered"] == true) : ?>
         <form action="server.php" class="login-form" method="post">
             <center><strong><p class="success">Attempting to Log-in as 
-                <?php 
-                    echo $IDnum."</center></strong><br>";
-                    echo "Name: ".$name."<br>";
-                    echo "Province: ".$province."<br>";
-                    echo "City or Town: ".$citytown."<br>";
-                    echo "Barangay: ".$barangay."<br>";
-                    echo "Contact: ".$contact."<br>";
-                    echo "Email Address: ".$email."<br>";
-                    echo "Previous Time-In: ".$prev_timein."<br><br>";
-                ?>
                 <div class="verification">
                     <div class="labels">
                         Name: <br>
