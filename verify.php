@@ -33,9 +33,6 @@
                 </p>";
             }
         }
-        else{
-            echo "<p>ID Number not registered!</p>";
-        }
     }
     else if (isset($_POST['f_submit'])) {
         $IDnum = mysqli_real_escape_string($db, $_POST['id']);

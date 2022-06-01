@@ -6,17 +6,18 @@
     }
     else if(($_POST['username'] != "admin") && ($_POST['password'] != 12345))
     {
-        echo "Wrong username and password!";
+        echo "Either the password or username is wrong. Please try again.";
     }
     else if ($_POST['username'] != "admin")
     {
-        echo "Wrong username!";
+        echo "Either the password or username is wrong. Please try again.";
     }
     else if ($_POST['password'] != "12345")
     {
-        echo "Wrong password!";
+        echo "Either the password or username is wrong. Please try again.";
     }      
 
+    
 ?>
 
 <!DOCTYPE html>
