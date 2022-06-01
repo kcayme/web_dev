@@ -103,7 +103,13 @@ span.psw {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
 }
-
+a{
+  text-decoration: none;
+  color: #3c763d; 
+}
+a:hover {
+  color: #04AA6D;
+}
 input[type='email']{
   height: 10px;
   width: 96.25%;
@@ -183,7 +189,8 @@ input[type='email']{
     </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New User?<a href="faculty_registration.php">Register Account</a></span>
+      <span class="psw">New User?<a href="faculty_registration.php">Register Account</a><br>
+      Admin?<a href="admin_login.php">Login here</a></span>
     </div>
   </form>
 </div>
