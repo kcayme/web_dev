@@ -97,6 +97,7 @@ a:hover{
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
+
 .cancelbtn,.returnbtn,.signoutbtn {
   padding: 10px;
   font-size: 15px;
@@ -111,6 +112,21 @@ a:hover{
 .cancelbtn{
   width: 30%;
 }
+.admincancel{
+
+  padding: 10px;
+  margin: 0px 0px 0px 0px;
+  font-size: 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height:10px;
+  width: auto;
+  text-decoration: none;
+  flex-grow:1;
+
+}
+
 .loginbtn {
   padding: 10px;
   width: 50%;
@@ -135,6 +151,12 @@ a:hover{
   width: 200px;
   height: 200px;
   margin: 0 auto;
+}
+
+.logincancel{
+
+  display:flex;
+
 }
 
 .zoom:hover {
