@@ -74,7 +74,13 @@ a {
   color: blue;
   text-decoration:underline;
 }
-
+a:hover{
+  color: #5F9EA0;
+}
+.signin{
+  text-decoration: none;
+  color: black;
+}
 .error {
   width: 92%; 
   margin: 0px auto; 
