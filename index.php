@@ -1,7 +1,7 @@
 <?php 
   session_start(); 
 
-  if (!isset($_SESSION['name'])) {
+  if (!isset($_SESSION['success'])) {
   	$_SESSION['msg'] = "You must log in first";
   	header('location: mode.php');
   }
@@ -29,7 +29,9 @@
       <div class="error success" >
       	<h3>
           <?php 
-          	echo $_SESSION['success']; 
+          	echo $_SESSION['success'];
+			echo "<br><br>Current Time-In: ".$_SESSION['current_time_in'];
+			unset($_SESSION['current_time_in']);
           	unset($_SESSION['success']);
           ?>
       	</h3>
@@ -37,19 +39,19 @@
   	<?php endif ?>
 
     <!-- logged in user information -->
-    <?php  if (isset($_SESSION['name'])) : ?>
-    	<center><p class="welcome">Welcome 
-			<?php 
-				if(!empty($_SESSION['type'])){
-					echo $_SESSION['type']."  ";
-					unset($_SESSION['type']);
-				}
-				echo "<strong>".$_SESSION['name']; 
-			?>
-		</strong></p>
-		
-    	<button type="submit" class="signoutbtn" name="new_reg"><a href="index.php?logout='1'">Sign Out</a></button></center>
-    <?php endif ?>
+	<center><p class="welcome">Logged in as 
+		<b>
+		<?php 
+			if(!empty($_SESSION['type'])){
+				 
+				echo $_SESSION['type']."  ";
+				unset($_SESSION['type']);
+			}
+		?>
+		</b>
+		</p>
+
+	<button type="submit" class="signoutbtn"><a class="signoutbtn" href="index.php?logout='1'">Sign Out</a></button></center>
 </div>
 		
 </body>

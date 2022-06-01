@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php //include('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +54,7 @@ button:hover {
 
 img.avatar {
   width: 40%;
-  border-radius: 10%;
+  border-radius: 50%;
 }
 
 .container {
@@ -86,7 +86,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 30%; /* Could be more or less, depending on screen size */
+  width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -131,16 +131,6 @@ span.psw {
      width: 100%;
   }
 }
-
-input[type='email']{
-  height: 10px;  
-  width: 96.25%;
-  padding: 16px;
-  border-width: thin;
-  border-color: #CCCCCC;
-  border-style: solid;
-} 
-
 </style>
 </head>
 <body>
@@ -189,8 +179,8 @@ input[type='email']{
     <input type="text" placeholder="Enter ID Number" name="id" required>
 
     <button type="submit" onclick="myFunction()" name="f_submit">Verify</button>
+   
     </div>
-    
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
       <span class="psw">New User?&nbsp;<a href="faculty_registration.php">Register Account</a></span>
@@ -208,7 +198,7 @@ input[type='email']{
     </div>
 
     <div class="container">
-      <label for="gname"><b>Name: </b></label>
+      <label for="gname"><b> Name: </b></label>
       <input type="text" placeholder="Guest Name" name="gname" required>
 
       <label for="gprovince"><b>Province: </b></label>
@@ -223,8 +213,8 @@ input[type='email']{
       <label for="gcontact"><b>Contact Number: </b></label>
       <input type="text" placeholder="Contact Number" name="gcontact" required>
 
-      <label for="gemail"><b>Email Address: </b></label>
-      <input type="email" placeholder="Email Address" name="gemail" required>
+      <label for="gemail"><b>Email: </b></label>
+      <input type="email" placeholder="Email" name="gemail" required>
 
       <button type="submit" onclick="myFunction()" name="guest_in">Log In</button>
     </div>

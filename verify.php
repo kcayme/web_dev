@@ -4,12 +4,14 @@
     unset($_SERVER["type"]);
     if (isset($_POST['s_submit'])) {
         $IDnum = $_POST["id"];
+        $_SESSION["id"] = $IDnum;
         $_SERVER["type"] = "Student";
         // check if input id number is registered in database
         $idnum_check_query = "SELECT * FROM students WHERE id_number='$IDnum' LIMIT 1";
     }
     else if (isset($_POST['f_submit'])) {
         $IDnum = $_POST["id"];
+        $_SESSION["id"] = $IDnum;
         $_SERVER["type"] = "Faculty/Staff";
         // check if input id number is registered in database
         $idnum_check_query = "SELECT * FROM faculty WHERE id_number='$IDnum' LIMIT 1";
@@ -49,40 +51,39 @@
       <div class="error" >
       	<h3>
           <?php 
-          	echo "ID Number ".$IDnum." not registered! Please register to login."; 
-          	unset($_SESSION["isRegistered"]);
+          	echo "ID Number <u>".$IDnum."</u> is not registered!<br>Please register to login."; 
           ?>
       	</h3>
       </div>
-      <center><button class="cancelbtn"><a href="mode.php">Return</a></button></center>
+      <center><button class="cancelbtn"><a class="returnbtn" href="mode.php">Return</a></button></center>
   	<?php endif ?>
       
     <!-- logged in user information -->
     <?php  if ($_SESSION["isRegistered"] == true) : ?>
         <form action="server.php" class="login-form" method="post">
-            <center><p class="success">Welcome 
+            <center><strong><p class="success">Attempting to Log-in as 
                 <?php 
-                    echo $IDnum."!"."</center><br>";
+                    echo $IDnum."</center></strong><br>";
                     echo "Name: ".$name."<br>";
                     echo "Province: ".$province."<br>";
                     echo "City or Town: ".$citytown."<br>";
                     echo "Barangay: ".$barangay."<br>";
                     echo "Contact: ".$contact."<br>";
                     echo "Email: ".$email."<br>";
-                    echo "Previous Time-In: ".$prev_timein."<br>";
+                    echo "Previous Time-In: ".$prev_timein."<br><br>";
                 ?>
-            </strong></p>
-            
-            <button type="submit" class="cancelbtn"><a href="index.php?logout='1'">Cancel</a></button>
-
-            <button type="submit" class="loginbtn" 
-                name=<?php if($_SERVER["type"] == "Student"){
-                    echo "stu_log";
-                }
-                else if($_SERVER["type"] == "Faculty/Staff"){
-                    echo "fac_log";
-                }?><a href="server.php?log=">Login</a>
-            </button>
+            </p>
+            <div class="btn-group">
+                <button type="submit" class="cancelbtn" name="cancel_log">Cancel</button>
+                <button type="submit" class="loginbtn" 
+                    name=<?php if($_SERVER["type"] == "Student"){
+                        echo "stu_log";
+                    }
+                    else if($_SERVER["type"] == "Faculty/Staff"){
+                        echo "fac_log";
+                    }?>>Login
+                </button>
+            </div>
         </form>
     <?php endif ?>	
 </div>

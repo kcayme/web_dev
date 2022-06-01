@@ -6,7 +6,7 @@
 </head>
 <body>
   <div class="header">
-  	<h2>Register (Administration)</h2>
+  	<h2>Register (Faculty or Staff)</h2>
   </div>
 	
   <form method="post" action="server.php">
