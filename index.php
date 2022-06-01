@@ -8,7 +8,7 @@
   
   if (isset($_GET['logout'])) {
   	session_destroy();
-  	unset($_SESSION['name']);
+  	unset($_SESSION['logout']);
   	header("location: mode.php");
   }
 ?>

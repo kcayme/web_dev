@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["admin_access"])){
+        session_destroy();
+  	    header("location: mode.php");
+    }
+    else{
+        unset($_SESSION['admin_access']);
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
