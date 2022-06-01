@@ -69,14 +69,29 @@
             <center><strong><p class="success">Attempting to Log-in as 
                 <?php 
                     echo $IDnum."</center></strong><br>";
-                    echo "Name: ".$name."<br>";
-                    echo "Province: ".$province."<br>";
-                    echo "City or Town: ".$citytown."<br>";
-                    echo "Barangay: ".$barangay."<br>";
-                    echo "Contact: ".$contact."<br>";
-                    echo "Email: ".$email."<br>";
-                    echo "Previous Time-In: ".$prev_timein."<br><br>";
                 ?>
+                <div class="verification">
+                    <div class="labels">
+                        Name: <br>
+                        Province: <br>
+                        City or Town: <br>
+                        Barangay: <br>
+                        Contact: <br>
+                        Email: <br>
+                        Previous Time-In: <br><br>
+                    </div>
+                    <div class="details">
+                        <?php
+                            echo $name."<br>";
+                            echo $province."<br>";
+                            echo $citytown."<br>";
+                            echo $barangay."<br>";
+                            echo $contact."<br>";
+                            echo $email."<br>";
+                            echo $prev_timein."<br><br>";
+                        ?>
+                    </div>
+                </div>
             </p>
             <div class="btn-group">
                 <button type="submit" class="loginbtn" 
