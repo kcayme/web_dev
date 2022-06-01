@@ -1,21 +1,28 @@
 <?php
-
-    if (($_POST['username'] == "admin") && ($_POST['password'] == 12345))
-    {
-        header("location: admin_access.php");
+    session_start();
+    if(isset($_POST['username']) && isset($_POST['password'])){
+        if (($_POST['username'] == "admin") && ($_POST['password'] == 12345))
+        {
+            $_SESSION["admin_access"] = 1;
+            header("location: admin_access.php");
+        }
+        else if(($_POST['username'] != "admin") && ($_POST['password'] != 12345))
+        {
+            echo "Wrong username and password!";
+        }
+        else if ($_POST['username'] != "admin")
+        {
+            echo "Wrong username!";
+        }
+        else if ($_POST['password'] != "12345")
+        {
+            echo "Wrong password!";
+        }   
     }
-    else if(($_POST['username'] != "admin") && ($_POST['password'] != 12345))
-    {
-        echo "Wrong username and password!";
+    else{
+        session_destroy();
+        header("location: mode.php");
     }
-    else if ($_POST['username'] != "admin")
-    {
-        echo "Wrong username!";
-    }
-    else if ($_POST['password'] != "12345")
-    {
-        echo "Wrong password!";
-    }      
 
 ?>
 
