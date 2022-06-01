@@ -1,10 +1,17 @@
-<?php include('server.php') ?>
+<?php //include('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(Contact_Tracing_Animated.gif);
+  background-size: cover;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -143,7 +150,9 @@ input[type='email']{
 </head>
 <body>
 
-<center><h2>Contact Tracing Application</h2>
+
+
+<center><h2><br><br>Contact Tracing Application</h2>
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Student Entry</button>
 <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Faculty Entry</button>
@@ -167,7 +176,7 @@ input[type='email']{
   </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New User?<a href="student_registration.php">Register Account</a></span>
+      <span class="psw">New User?&nbsp;<a href="student_registration.php">Register Account</a></span>
     </div>
   </form>
 </div>

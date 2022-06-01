@@ -9,7 +9,9 @@ body{
   background: url(Contact_Tracing_Animated.gif);
   background-size: cover;
 }
-
+button{
+  cursor: pointer;
+}
 .header {
   width: 30%;
   margin: 50px auto 0px;
@@ -29,6 +31,18 @@ form, .content {
   background: white;
   border-radius: 0px 0px 10px 10px;
 }
+
+.login-form {
+  width: auto;
+  margin: 0px 0px;
+  padding: 10px;
+  border: 1px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
 .input-group {
   margin: 10px 0px 10px 0px;
 }
@@ -53,19 +67,12 @@ form, .content {
   border: none;
   border-radius: 5px;
 }
-.signoutbtn {
-  padding: 10px;
-  font-size: 15px;
-  color: white;
-  background: #5F9EA0;
-  border-radius: 5px;
-}
 .welcome{
   padding: 20px;
 }
 a {
-  text-decoration: none;
-  color: white;
+  color: blue;
+  text-decoration:underline;
 }
 a:hover{
   color: #5F9EA0;
@@ -78,8 +85,9 @@ a:hover{
   width: 92%; 
   margin: 0px auto; 
   padding: 10px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
+  margin-bottom: 20px;
+  border: 1px solid #f44336;
+  color: #f44336;
   background: #f2dede; 
   border-radius: 5px; 
   text-align: left;
@@ -89,4 +97,31 @@ a:hover{
   background: #dff0d8; 
   border: 1px solid #3c763d;
   margin-bottom: 20px;
+}
+.cancelbtn,.returnbtn,.signoutbtn {
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  background: #f44336;
+  border: none;
+  border-radius: 5px;
+  width: auto;
+  text-decoration: none;
+}
+
+.loginbtn {
+  padding: 10px;
+  width: 50%;
+  font-size: 15px;
+  color: white;
+  background: #04AA6D;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-group{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
