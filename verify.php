@@ -59,21 +59,31 @@
       
     <!-- logged in user information -->
     <?php  if ($_SESSION["isRegistered"] == true) : ?>
-    	<center><p class="success">Welcome 
-			<?php 
-				echo $IDnum."!"."</center><br>";
-                echo "Name: ".$name."<br>";
-                echo "Province: ".$province."<br>";
-                echo "City or Town: ".$citytown."<br>";
-                echo "Barangay: ".$barangay."<br>";
-                echo "Contact: ".$contact."<br>";
-                echo "Email: ".$email."<br>";
-                echo "Previous Time-In: ".$prev_timein."<br>";
-			?>
-		</strong></p>
-        
-    	<button type="submit" class="cancelbtn"><a href="index.php?logout='1'">Cancel</a></button>
-        <button type="submit" name="loginbtn"><a href="index.php?logout='1'">Login</a></button>
+        <form action="server.php" class="login-form" method="post">
+            <center><p class="success">Welcome 
+                <?php 
+                    echo $IDnum."!"."</center><br>";
+                    echo "Name: ".$name."<br>";
+                    echo "Province: ".$province."<br>";
+                    echo "City or Town: ".$citytown."<br>";
+                    echo "Barangay: ".$barangay."<br>";
+                    echo "Contact: ".$contact."<br>";
+                    echo "Email: ".$email."<br>";
+                    echo "Previous Time-In: ".$prev_timein."<br>";
+                ?>
+            </strong></p>
+            
+            <button type="submit" class="cancelbtn"><a href="index.php?logout='1'">Cancel</a></button>
+
+            <button type="submit" class="loginbtn" 
+                name=<?php if($_SERVER["type"] == "Student"){
+                    echo "stu_log";
+                }
+                else if($_SERVER["type"] == "Faculty/Staff"){
+                    echo "fac_log";
+                }?><a href="server.php?log=">Login</a>
+            </button>
+        </form>
     <?php endif ?>	
 </div>
 		

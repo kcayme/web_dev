@@ -67,7 +67,7 @@ if (isset($_POST['stu_reg'])) {
   }
 }
 // faculty registration
-if (isset($_POST['fac_reg'])) {
+else if (isset($_POST['fac_reg'])) {
   // receive all input values from the form
   $IDnum = mysqli_real_escape_string($db, $_POST['id']);
   $name = mysqli_real_escape_string($db, $_POST['name']);
@@ -118,7 +118,7 @@ if (isset($_POST['fac_reg'])) {
   }
 }
 // if login option is selected
-if (isset($_POST['login_user'])) {
+else if (isset($_POST['login_user'])) {
   $IDnum = mysqli_real_escape_string($db, $_POST['id']);
 
   if (empty($IDnum)) {
@@ -140,8 +140,8 @@ if (isset($_POST['login_user'])) {
   }
   */
 }
-
-if (isset($_POST['guest_in'])) {
+// if guest registration
+else if (isset($_POST['guest_in'])) {
   // receive all input values from the form
   $name = mysqli_real_escape_string($db, $_POST['gname']);
   $province = mysqli_real_escape_string($db, $_POST['gprovince']);
