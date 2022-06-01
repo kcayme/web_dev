@@ -10,7 +10,6 @@ $barangay = "";
 $contact = "";
 $email = "";
 $timein = "";
-$errors = array(); 
 
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'contactdb');
@@ -26,16 +25,6 @@ if (isset($_POST['stu_reg'])) {
   $contact = mysqli_real_escape_string($db, $_POST['contact']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
 
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
-  if (empty($IDnum)) { array_push($errors, "Username is required"); }
-  if (empty($name)) { array_push($errors, "Email is required"); }
-  if (empty($province)) { array_push($province, "Province is required"); }
-  if (empty($citytown)) { array_push($citytown, "City/Town is required"); }
-  if (empty($barangay)) { array_push($barangay, "Barangay is required"); }
-  if (empty($contact)) { array_push($errors, "Contact is required"); }
-  if (empty($email)) { array_push($errors, "Email is required"); }
-
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
   $idnum_check_query = "SELECT * FROM students WHERE id_number='$IDnum' LIMIT 1";
@@ -44,12 +33,12 @@ if (isset($_POST['stu_reg'])) {
   
   if ($match) { // if id number exists or has an id number match
     if ($match['id_number'] === $IDnum) {
-      array_push($errors, "ID number already exists");
+      echo "ID number already exists";
     }
   }
 
   // Finally, register user if there are no errors in the form
-  if (count($errors) == 0) {
+  else {
     // get time in on this registration (format: YYYY-MM-DD HH:MM:SS)
     date_default_timezone_set('Asia/Manila');
     $timein = date('Y-m-d H:i:s');
@@ -64,7 +53,7 @@ if (isset($_POST['stu_reg'])) {
   	  header('location: index.php');
     }
   	else{
-      array_push($errors, "registration failed!");
+      echo "registration failed!";
     }
   }
 }
@@ -79,16 +68,6 @@ else if (isset($_POST['fac_reg'])) {
   $contact = mysqli_real_escape_string($db, $_POST['contact']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
 
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
-  if (empty($IDnum)) { array_push($errors, "Username is required"); }
-  if (empty($name)) { array_push($errors, "Email is required"); }
-  if (empty($province)) { array_push($province, "Province is required"); }
-  if (empty($citytown)) { array_push($citytown, "City/Town is required"); }
-  if (empty($barangay)) { array_push($barangay, "Barangay is required"); }
-  if (empty($contact)) { array_push($errors, "Contact is required"); }
-  if (empty($email)) { array_push($errors, "Email is required"); }
-
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
   $idnum_check_query = "SELECT * FROM faculty WHERE id_number='$IDnum' LIMIT 1";
@@ -97,12 +76,11 @@ else if (isset($_POST['fac_reg'])) {
   
   if ($match) { // if id number exists or has an id number match
     if ($match['id_number'] === $IDnum) {
-      array_push($errors, "ID number already exists");
+      echo "ID number already exists";
     }
   }
-
   // Finally, register user if there are no errors in the form
-  if (count($errors) == 0) {
+  else {
     // get time in on this registration (format: YYYY-MM-DD HH:MM:SS)
     date_default_timezone_set('Asia/Manila');
     $timein = date('Y-m-d H:i:s');
@@ -117,7 +95,7 @@ else if (isset($_POST['fac_reg'])) {
   	  header('location: index.php');
     }
   	else{
-      array_push($errors, "registration failed!");
+      echo "registration failed!";
     }
   }
 }
@@ -143,22 +121,8 @@ else if (isset($_POST['stu_log'])) {
     header('location: index.php');
   }
   else{
-    array_push($errors, "login failed!");
+    echo "login failed!";
   }
-  /*
-  if (count($errors) == 0) {
-  	$password = md5($password);
-  	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-  	$results = mysqli_query($db, $query);
-  	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.php');
-  	}else {
-  		array_push($errors, "Wrong username/password combination");
-  	}
-  }
-  */
 }
 // if faculty login is selected
 else if (isset($_POST['fac_log'])) {
@@ -182,22 +146,8 @@ else if (isset($_POST['fac_log'])) {
     header('location: index.php');
   }
   else{
-    array_push($errors, "login failed!");
+    echo "login failed!";
   }
-  /*
-  if (count($errors) == 0) {
-  	$password = md5($password);
-  	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-  	$results = mysqli_query($db, $query);
-  	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.php');
-  	}else {
-  		array_push($errors, "Wrong username/password combination");
-  	}
-  }
-  */
 }
 // if guest registration
 else if (isset($_POST['guest_in'])) {
@@ -209,32 +159,20 @@ else if (isset($_POST['guest_in'])) {
   $contact = mysqli_real_escape_string($db, $_POST['gcontact']);
   $email = mysqli_real_escape_string($db, $_POST['gemail']);
 
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
-  if (empty($name)) { array_push($errors, "Email is required"); }
-  if (empty($province)) { array_push($province, "Province is required"); }
-  if (empty($citytown)) { array_push($citytown, "City/Town is required"); }
-  if (empty($barangay)) { array_push($barangay, "Barangay is required"); }
-  if (empty($contact)) { array_push($errors, "Contact is required"); }
-  if (empty($email)) { array_push($errors, "Email is required"); }
-
-  // Finally, register user if there are no errors in the form
-  if (count($errors) == 0) {
-    // get time in on this registration (format: YYYY-MM-DD HH:MM:SS)
-    date_default_timezone_set('Asia/Manila');
-    $timein = date('Y-m-d H:i:s');
-    // a
-  	$query = "INSERT INTO guest (name, province, citytown, barangay, number, email, time_in) 
-  			  VALUES('$name', '$province','$citytown','$barangay', '$contact', '$email', '$timein')";
-  	if(mysqli_query($db, $query)){
-      $_SESSION['type'] = "Guest";
-      $_SESSION['name'] = $name;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.php');
-    }
-  	else{
-      array_push($errors, "Guest Login Failed!");
-    }
+  // get time in on this registration (format: YYYY-MM-DD HH:MM:SS)
+  date_default_timezone_set('Asia/Manila');
+  $timein = date('Y-m-d H:i:s');
+  // 
+  $query = "INSERT INTO guest (name, province, citytown, barangay, number, email, time_in) 
+        VALUES('$name', '$province','$citytown','$barangay', '$contact', '$email', '$timein')";
+  if(mysqli_query($db, $query)){
+    $_SESSION['type'] = "Guest";
+    $_SESSION['name'] = $name;
+    $_SESSION['success'] = "You are now logged in";
+    header('location: index.php');
+  }
+  else{
+    echo "Guest Login Failed!";
   }
 }
 // if cancel is pressed during verification stage
