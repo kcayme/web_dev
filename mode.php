@@ -1,4 +1,17 @@
-<?php //include('server.php') ?>
+<?php 
+	session_start();
+	if(isset($_SESSION['status'])){
+		$status = $_SESSION['status'];
+		$error_msg = "";
+		if($status == "fac_log_failed"){
+			echo "<script>alert('Faculty Log-In Failed!')</script>";
+		}
+		else if($status == "stu_log_failed"){
+			echo "<script>alert('Student Log-In Failed!')</script>";
+		}
+		unset($_SESSION['status']);
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +67,6 @@ button:hover {
 
 img.avatar {
   width: 40%;
-  border-radius: 50%;
 }
 
 .container {
@@ -84,9 +96,9 @@ span.psw {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -170,10 +182,8 @@ input[type='email']{
 
 }
 .zoomb1:hover {
-
   transform: scale(1.2);
   cursor: pointer;
-  
   
 }
 .zoomb2:hover {
@@ -186,7 +196,7 @@ input[type='email']{
 
   transform: scale(1.2);
   cursor: pointer;
-
+  
 }
 </style>
 </head>
@@ -247,8 +257,8 @@ input[type='email']{
     </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New User?<a href="faculty_registration.php">Register Account</a><br>
-      Admin?<a href="admin_login.php">Login here</a></span>
+      <span class="psw">New User?&nbsp;<a href="faculty_registration.php">Register Account</a><br>
+      Admin?&nbsp;<a href="admin_login.php">Login here</a></span>
     </div>
   </form>
 </div>

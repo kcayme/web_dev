@@ -13,14 +13,13 @@ button{
   cursor: pointer;
 }
 .header {
-  width: 30%;
+  width: auto;
   margin: 50px auto 0px;
   color: white;
   background: #5F9EA0;
   text-align: center;
   border: 1px solid #B0C4DE;
   border-bottom: none;
-  border-radius: 10px 10px 0px 0px;
   padding: 20px;
 }
 form, .content {
@@ -29,7 +28,7 @@ form, .content {
   padding: 20px;
   border: 1px solid #B0C4DE;
   background: white;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 20px 20px 20px 20px;
 }
 
 .login-form {
@@ -38,7 +37,7 @@ form, .content {
   padding: 10px;
   border: 1px solid #B0C4DE;
   background: white;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
   display: flex;
   flex-direction: column;
 }
@@ -78,8 +77,8 @@ a:hover{
   color: #5F9EA0;
 }
 .signin{
-  text-decoration: none;
-  color: black;
+  text-decoration: underline;
+  color: blue;
 }
 .error {
   width: 92%; 
@@ -137,4 +136,9 @@ a:hover{
 
 .zoom:hover {
   transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.reg-form{
+  display: flex;
+  flex-direction: row;
 }

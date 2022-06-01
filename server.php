@@ -105,6 +105,7 @@ else if (isset($_POST['fac_reg'])) {
 }
 // if login option is selected
 else if (isset($_POST['stu_log'])) {
+  unset($_SESSION["isRegistered"]);
   $IDlog = $_SESSION["id"];
   echo $IDlog;
   $IDnum = mysqli_real_escape_string($db, $IDlog);
@@ -125,11 +126,13 @@ else if (isset($_POST['stu_log'])) {
     header('location: index.php');
   }
   else{
-    echo "login failed!";
+    $_SESSION['status'] = "stu_log_failed";
+    header('location: mode.php');
   }
 }
 // if faculty login is selected
 else if (isset($_POST['fac_log'])) {
+  unset($_SESSION["isRegistered"]);
   $IDlog = $_SESSION["id"];
   echo $IDlog;
   $IDnum = mysqli_real_escape_string($db, $IDlog);
@@ -150,7 +153,8 @@ else if (isset($_POST['fac_log'])) {
     header('location: index.php');
   }
   else{
-    echo "login failed!";
+    $_SESSION['status'] = "fac_log_failed";
+    header('location: mode.php');
   }
 }
 // if guest registration
