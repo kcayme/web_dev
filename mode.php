@@ -86,7 +86,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -109,6 +109,21 @@ span.psw {
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
+}
+a{
+  text-decoration: none;
+  color: #3c763d; 
+}
+a:hover {
+  color: #04AA6D;
+}
+input[type='email']{
+  height: 10px;
+  width: 96.25%;
+  padding: 16px;
+  border-color:#CCCCCC; 
+  border-width: 0.5px;
+  border-style: solid;
 }
 
 @-webkit-keyframes animatezoom {
@@ -183,7 +198,8 @@ span.psw {
     </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">New User?&nbsp;<a href="faculty_registration.php">Register Account</a></span>
+      <span class="psw">New User?<a href="faculty_registration.php">Register Account</a><br>
+      Admin?<a href="admin_login.php">Login here</a></span>
     </div>
   </form>
 </div>
@@ -196,7 +212,9 @@ span.psw {
       <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="Guest.png" alt="Guest" class="avatar" style="width:90px; height:90px;">
     </div>
-
+    <div class="header">
+  	  <center><h2>Guest Registration</h2></center>
+    </div>
     <div class="container">
       <label for="gname"><b> Name: </b></label>
       <input type="text" placeholder="Guest Name" name="gname" required>
@@ -213,9 +231,9 @@ span.psw {
       <label for="gcontact"><b>Contact Number: </b></label>
       <input type="text" placeholder="Contact Number" name="gcontact" required>
 
-      <label for="gemail"><b>Email: </b></label>
-      <input type="email" placeholder="Email" name="gemail" required>
-
+      <label for="gemail"><b>Email Address: </b></label><br>
+      <input type="email" placeholder="Email Address" name="gemail" required>
+      
       <button type="submit" onclick="myFunction()" name="guest_in">Log In</button>
     </div>
   </form>
