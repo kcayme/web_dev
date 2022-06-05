@@ -56,12 +56,11 @@ form, .content {
   margin: 3px;
 }
 .input-group input {
-  height: 30px;
   width: 93%;
-  padding: 5px 10px;
+  padding: 2% 3%;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid gray;
+  border: 1px solid #808080;
 }
 .btn {
   padding: 10px;
@@ -168,11 +167,6 @@ a:hover{
   transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-.reg-form{
-  display: flex;
-  flex-direction: row;
-}
-
 .verification{
   display: flex;
   flex-direction: row;
@@ -185,4 +179,103 @@ a:hover{
 .details{
   text-align: right;
   text-decoration: none;
+}
+
+.reg-form{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2%;
+}
+
+.fac-form{
+  position: absolute;
+  left: 50%;
+  width: 90%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.error-modal {
+  position: absolute;
+  z-index: 5;
+	top: 30%;
+  left: 50%;
+  width: 280px;
+  height: 210px;
+  margin-left: -140px;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 5px 8px 15px 0 rgba(0,0,0,0.4);
+	text-align: center;
+	overflow: hidden;
+	animation: show-modal .7s ease-in-out;
+  border-radius: 5% 5%;
+	
+}
+.reg-img {
+  margin-top: 24px;
+}
+
+.title {
+  display: block;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 14px 0 5px 0;
+}
+
+.reg-mod-msg {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19px;
+  margin: 0;
+  padding: 0 30px;
+}
+
+.reg-btn {
+  position: absolute;
+  height: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #F65656;
+  color: #fff;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+  outline: none;
+  /*
+  &:hover {
+    background: #EC3434;
+  }*/
+  
+}
+
+@keyframes show-modal {
+	0% {
+		transform: scale(0);
+	}
+	60% {
+		transform: scale(1.1);
+	}
+	80% {
+		transform: scale(.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes hide-modal {
+	0% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(0);
+	}
 }

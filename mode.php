@@ -30,14 +30,14 @@ body{
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type='email']{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-
+  border-radius: 10px;
 }
 
 .title{
@@ -111,6 +111,7 @@ span.psw {
   margin: 5% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 30%; /* Could be more or less, depending on screen size */
+  border-radius: 20px 20px;
 }
 
 /* The Close Button (x) */
@@ -140,14 +141,6 @@ a{
 }
 a:hover {
   color: #04AA6D;
-}
-input[type='email']{
-  height: 10px;
-  width: 96.25%;
-  padding: 16px;
-  border-color:#CCCCCC; 
-  border-width: 0.5px;
-  border-style: solid;
 }
 
 @-webkit-keyframes animatezoom {
@@ -240,7 +233,7 @@ input[type='email']{
 
     <div class="container">
     <label for="snumber"><b>Enter Student Number: </b></label>
-    <input type="text" placeholder="Enter Student ID Number" name="id" required><br>
+    <input type="text" placeholder="Enter Student ID Number" name="id" pattern="^[0-9]+$" required><br>
     
     <button type="submit" onclick="myFunction()" name="s_submit">Verify</button>
 
@@ -262,7 +255,7 @@ input[type='email']{
 	
     <div class="container">
     <label for="fnumber"><b>Enter Faculty ID Number: </b></label>
-    <input type="text" placeholder="Enter ID Number" name="id" required>
+    <input type="text" placeholder="Enter ID Number" name="id" pattern="^[0-9]+$" required>
 
     <button type="submit" onclick="myFunction()" name="f_submit">Verify</button>
    
@@ -275,7 +268,6 @@ input[type='email']{
   </form>
 </div>
 
-
 <div id="id03" class="modal">
   
   <form class="modal-content animate" action="server.php" method="post">
@@ -283,12 +275,12 @@ input[type='email']{
       <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="Guest.png" alt="Guest" class="avatar" style="width:90px; height:90px;">
     </div>
-    <div class="header">
+    <div>
   	  <center><h2>Guest Registration</h2></center>
     </div>
     <div class="container">
       <label for="gname"><b> Name: </b></label>
-      <input type="text" placeholder="Guest Name" name="gname" required>
+      <input type="text" placeholder="Guest Name" name="gname" pattern="([^0-9]*)$" required>
 
       <label for="gprovince"><b>Province: </b></label>
       <input type="text" placeholder="Province" name="gprovince" required>
@@ -300,7 +292,7 @@ input[type='email']{
       <input type="text" placeholder="Barangay" name="gbarangay" required>
 
       <label for="gcontact"><b>Contact Number: </b></label>
-      <input type="text" placeholder="Contact Number" name="gcontact" required>
+      <input type="text" placeholder="Contact Number" name="gcontact" pattern="^[0-9]+$" required>
 
       <label for="gemail"><b>Email Address: </b></label><br>
       <input type="email" placeholder="Email Address" name="gemail" required>
