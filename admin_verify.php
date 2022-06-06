@@ -6,20 +6,14 @@
             $_SESSION["admin_access"] = 1;
             header("location: admin_access.php");
         }
-        else if(($_POST['username'] != "admin") && ($_POST['password'] != 12345))
+        else if(($_POST['username'] != "admin") || ($_POST['password'] != 12345))
         {
-            echo "Either the password or username is wrong. Please try again.";
+            echo'<br><br><br><br><center><img src="AdminLoginWrong.png"><br><br>
+            <a href="mode.php">
+                <img src="ReturnButton.png">
+            ';
         }
-        else if ($_POST['username'] != "admin")
-        {
-            echo "Either the password or username is wrong. Please try again.";
-        }
-        else if ($_POST['password'] != "12345")
-        {
-            echo "Either the password or username is wrong. Please try again.";
-        } 
     }   
-        
 
 ?>
 
