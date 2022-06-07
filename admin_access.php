@@ -178,7 +178,7 @@
                                             {
                                                 ?>
                                                 <tr>
-                                                    <td><?= "Student"; ?></td>
+                                                    <td><?= "Faculty/Staff"; ?></td>
                                                     <td><?= $items['id_number']; ?></td>
                                                     <td><?= $items['name']; ?></td>
                                                     <td><?= $items['province']; ?></td>
