@@ -115,7 +115,7 @@
                                                 <?php
                                             }
                                         }
-                                        $query = "SELECT * FROM faculty ORDER BY name ASC";
+                                        $query = "SELECT * FROM faculty WHERE CONCAT(id_number,name,province,citytown,barangay,number,email,time_in) LIKE '%$filtervalues%' ";
                                         $query_run = mysqli_query($con, $query);
                                         $faculty_match = mysqli_num_rows($query_run);
                                         if($faculty_match > 0)
@@ -146,7 +146,7 @@
                                         }
                                     }
                                     else if (empty($_GET['search'])){
-                                        $query = "SELECT * FROM students";
+                                        $query = "SELECT * FROM students ORDER BY name ASC";
                                         $query_run = mysqli_query($con, $query);
                                         $student_match = mysqli_num_rows($query_run);
                                         if($student_match > 0)
@@ -169,7 +169,7 @@
                                             }
                                         }
 
-                                        $query = "SELECT * FROM faculty";
+                                        $query = "SELECT * FROM faculty ORDER BY name ASC";
                                         $query_run = mysqli_query($con, $query);
                                         $faculty_match = mysqli_num_rows($query_run);
                                         if($faculty_match > 0)
@@ -195,7 +195,7 @@
                                         {
                                             ?>
                                                 <tr>
-                                                    <td colspan="8">No Record Found</td>
+                                                    <td colspan="9" align ="center">No Record Found</td>
                                                 </tr>
                                             <?php
                                         }
