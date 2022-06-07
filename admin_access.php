@@ -4,6 +4,7 @@
   if (isset($_GET['logout'])) {
       session_destroy();
       unset($_SESSION['name']);
+      unset($_SESSION['admin_access']);
       header("location: mode.php");
       unset($_SESSION['admin_access']);
   }
@@ -115,7 +116,7 @@
                                                 <?php
                                             }
                                         }
-                                        $query = "SELECT * FROM faculty WHERE CONCAT(id_number,name,province,citytown,barangay,number,email,time_in) LIKE '%$filtervalues%' ";
+                                        $query = "SELECT * FROM faculty ORDER BY name ASC";
                                         $query_run = mysqli_query($con, $query);
                                         $faculty_match = mysqli_num_rows($query_run);
                                         if($faculty_match > 0)
