@@ -115,7 +115,7 @@
                                                 <?php
                                             }
                                         }
-                                        $query = "SELECT * FROM faculty WHERE CONCAT(id_number,name,province,citytown,barangay,number,email,time_in) LIKE '%$filtervalues%' ";
+                                        $query = "SELECT * FROM faculty ORDER BY name ASC";
                                         $query_run = mysqli_query($con, $query);
                                         $faculty_match = mysqli_num_rows($query_run);
                                         if($faculty_match > 0)
