@@ -174,6 +174,7 @@ else if (isset($_POST['guest_in'])) {
   $query = "INSERT INTO guest (name, province, citytown, barangay, number, email, time_in) 
         VALUES('$name', '$province','$citytown','$barangay', '$contact', '$email', '$timein')";
   if(mysqli_query($db, $query)){
+    $_SESSION['current_time_in'] = $timein;
     $_SESSION['type'] = "Guest";
     $_SESSION['name'] = $name;
     $_SESSION['success'] = "You are now logged in";
